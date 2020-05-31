@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ЗАГОЛОВОК</title>
+    {% load static %} <!-- В новой django staticfiles не надо !!!-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
 </head>
-<body style="background: rgb(50, 63, 77)">
-    {% block content %}
-    {% endblock %}
+<body style="background: snow">
+    <div class="constainer">
+        <h3>{% include "mainApp/includes/html_head.html" %}</h3>
+        <p>
+            {% block content %}
+            {% endblock %}
+            Мир Вотандии верит во многих богов, но почти все боги этого мира мертвы
+        </p>
+        <img src="{% static 'mainApp/image/ris.jpg' %}" class="img-thumbnail">
+    </div>
 </body>
 </html>
